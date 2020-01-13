@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		
+		<title></title>
+		<link href="css/shop.css" rel="stylesheet" type="text/css">
+		<script type="text/javascript" src="./js/结算.js"></script>
+	</head>
+	<body>
+		<div style="width: 300px; height: 500px;">
+		<div id="container" style="width:300px;height: 50px; text-align:center;">
+			<!--第一层-->
+			<div id="header" style="background-color:#FFA500;">
+				<p style="margin-bottom:0;">购物车</p>
+			</div>
+			<!--第二层-->
+			<div id="mid1" style="height: 50px;">
+				<form>
+				<input type="checkbox"  id="allcheck"  class="ck" onclick="" name="全选" value="全选" style="float: left; ">
+					<p style="float: left;">全选</p><p style="float: right;">清空</p>
+				</form>
+			</div>
+			<hr width="300px" />
+		</div>
+	
+		
+		<br /><br/><br />
+		<div id="container1" style="width:300px;height: 50px; text-align:center;">
+      <!--第三层-->
+			<div id="mid2" style=" width: 300px;">
+				<div id="container" style="width:300px"> 
+			
+				    <div id="menu" style="height:100px;width:50px;float:left;">
+				
+					<form pid="1001">
+					<input type="checkbox" value="选中" style="float: left;text-align: center;" />
+					</form>
+					 </div>
+					 <div id="a" style="height:100px;width:50px;float:left;">
+						 <img src="img/1.jpeg" style="float: left; margin-bottom: 10px;"width="50px" height="50px">
+						 </div>
+						<div id="content" style="height:100px;width:130px;float:left;">
+						<p>产品名称</p>
+						<span class="add"><button style="width: 20px;height: 20px; background-color: #FF7F50;">+</button></span>
+						 <span class="num1">1</span><span class="sub"><button style="width: 20px;height: 20px; background-color: #FF7F50;">-</button></span>
+						<p>¥:200</p>
+						</div>
+						<div id="b" style="height:100px;width:70px;float:left;">
+						<button id="del1"  style="width: 50px; height: 30px; float: right;" onclick="deleteBtn(this)">删除</button>
+						<!-- <form autocomplete='off'>
+							 <input id="del1"  style="width: 50px; height: 30px; float: right;" onclick="deleteBtn(this)"  placeholder="删除">
+						 </form>
+						-->
+						
+						
+						</div>
+					<hr style="width: 300px;" />
+				</div>
+			
+				
+			<!--重复-->
+				<div id="mid2" style=" width: 300px;">
+					<div id="container" style="width:300px"> 
+					<div id="menu" style="height:100px;width:50px;float:left;">
+					<form pid="1002">
+					<input type="checkbox" class="ck" name="选中" value="选中" style="float: left;text-align: center;" />
+					</form>
+					</div>
+					 <div id="a" style="height:100px;width:50px;float:left;">
+					 <img src="img/12.jpg" style="float: left; margin-bottom: 10px;"width="50px" height="50px">
+					 </div>
+					<div id="content" style="height:100px;width:130px;float:left;">
+					<p>产品名称</p>
+					<span class="add"><button style="width: 20px;height: 20px; background-color: #FF7F50;">+</button></span>
+					 <span class="num1">1</span><span class="sub">
+					 <button style="width: 20px;height: 20px; background-color: #FF7F50;">-</button></span>
+					<p>¥:200</p>
+					</div>
+					<div id="b" style="height:100px;width:70px;float:left;">
+					<button id="del1"  style="width: 50px; height: 30px; float: right;" onclick="deleteBtn(this)">删除</button>
+					</div></div>
+					<hr style="width: 300px;" />
+					
+			<!--重复-->
+						<div id="mid2" style=" width: 300px;">
+							<div id="container" style="width:300px"> 
+							<div id="menu" style="height:100px;width:50px;float:left;">
+							<form pid="1003">
+							<input type="checkbox" class="ck" name="选中" value="选中" style="float: left;text-align: center;" />
+							</form>
+							</div>
+							 <div id="a" style="height:100px;width:50px;float:left;">
+							 <img src="img/13.jpg" style="float: left; margin-bottom: 10px;"width="50px" height="50px">
+							 </div>
+							<div id="content" style="height:100px;width:130px;float:left;">
+							<p>产品名称</p>
+							<span class="add"><button style="width: 20px;height: 20px; background-color: #FF7F50;">+</button></span>
+							 <strong>1</strong><span class="add"><button style="width: 20px;height: 20px; background-color: #FF7F50;">-</button></span>
+						<p>¥:<em>200</em></p>
+							<br />
+							小计：<span class="22">0元</span>
+							
+							
+							</div>
+							<div id="b" style="height:100px;width:70px;float:left;">
+							<button id="del1"  style="width: 50px; height: 30px; float: right;" onclick="deleteBtn(this)">删除</button>
+							</div></div>
+							<hr style="width: 300px;" />
+					
+			  <script type="text/javascript">
+				  
+				  var sum=document.getElementById('content');
+				  				     for(var i=0;i<sum.length;i++)
+				  					  {
+				  						  jiesuan(sum[i]);
+				  					  }
+				  			function jiesuan(parent){
+				  				var add=document.getElementsByClassName('add');
+				  				
+				  				var oEm=document.getElementsByTagName('em')[0];//单价
+				  				var oSpan=document.getElementsByClassName('22')[0]//小计
+				  				
+				  				var sumprice=0;
+				  				for(var i=0;i<add.length;i++){
+				  				add[i].onclick=function(){
+				  				this.nextElementSibling.innerHTML++;
+				  				sumprice=sumprice+parseFloat(oEm.innerHTML);
+				  				}
+				  				
+				  				
+				  				sub[i].onclick=function(){
+				  					if(this.previousElementSibling.innerHTML>1){
+				  						this.previousElementSibling.innerHTML--;
+				  						sumprice=sumprice-parseFloat(oEm.innerHTML);
+				  					}
+				  					else{
+				  						this.previousElementSibling.innerHTML=1;
+				  						sumprice=parseFloat(oEm.innerHTML);
+				  					}
+				  				}
+				  				}
+				  			}					
+						</script>
+				</div></div>
+				
+				<div id="allcheck" style="width: 300px; height: 80px;  bottom:40px; position: absolute;">
+					<form>
+					<input type="checkbox"  class="ck" name="allcheck" value="allcheck" style="float: left; ">
+						<p style="float: left;">全选</p><p >总价格：¥ <span id="totalPrice">0</span></p>
+						<button  style="width: 50px;height: 35px;  float: right; background-color: #FF3B30;">结算</button>
+					</form>	
+				</div>
+				
+				
+			<!--固定界面-->		
+				</div>
+		<div class="nav" style="width: 300px; position: absolute;">
+				<ul>
+				    <li><a href="首页.html"><span>首页</span></a></li>
+				    <li><a href="购物车.html"><span>购物车</span></a></li>
+				    <li><a href="我的必要.html"><span>我的必要</span></a></li>
+				</ul>
+				</div>
+			</div>
+			
+	</body>
+</html>
+
+

@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link href="css/shop.css" rel="stylesheet" type="text/css">
+		<style type="text/css">
+			 * {
+		           margin: 0;
+		           padding: 0;
+				  
+		       }
+			#container{
+				width:100%;
+				height: 50px; 
+				text-align:center;
+			}
+			#header{
+				background-color:#FFA500;
+			}
+			#mid1{
+				height: 50px;
+			
+			}
+			#container1{
+				width:100%;
+				height: 50px;
+				text-align:center;
+			}
+			#mid2{
+				width: 100%;	
+			}
+			#container3{
+				width:100%;
+			}
+			#menu{
+				height:100px;
+				width:30%;
+				float:left;
+			}
+			.menu1{
+				float: left;
+				text-align:center;
+			}
+			#a{
+				height:100px;
+				width:25%;
+				float:left;
+			}
+			.im{
+				float: left;
+				margin-bottom: 10px;
+				
+			}
+			#content{
+				height:100px;
+				width:25%;
+				float:left;
+			}
+			.butt{
+				width: 20px;
+				height: 20px;
+				background-color: #FF7F50;
+			}
+			.del1{
+				width: 10%;
+				height: 30px;
+				float: right;
+			}
+			.container3{
+				width:100%;
+			}
+			.hrr{
+				width: 100%;
+			}
+			#b{
+				height:100px;
+				width:70px;
+				float:left;
+			}
+			#allcheck{
+				width: 20px; 
+				height: 20px; 
+				padding-top: 65px;
+			   float: left;
+			}
+			#jiesuan{
+				width: 80px;
+				height: 35px;  
+				float: right; 
+				background-color: #FFA500;
+			}
+			#all{
+				height: 100px;
+				width: 100%;		
+				padding-bottom: 60px;
+			}
+		</style>
+		
+						
+	</head>
+	<body>
+		<div >
+		<div id="container" >
+			<!--第一层-->
+			<div id="header">
+				<p style="margin-bottom:0;">购物车</p>
+			</div>
+			<!--第二层-->
+			<div id="mid1">
+				<form>
+						<input type="checkbox" id="allcheck" name="allcheck" value="allcheck" >
+					<p style="float: left;">全选</p><p style="float: right;">清空</p>
+				</form>
+			</div>
+			<script type="text/javascript">
+											
+						var allcheck = document.getElementById("allcheck");//获取全选框
+						allcheck.addEventListener("click",chickHandler);//给全选框按钮点击添加属性
+						for(var i=0;i<4;i++)//遍历按钮
+						{
+							var check = document.getElementById("check"+i);
+							console.log(check);
+						     check.addEventListener("click",chickHandler);
+							//check.addEventListener("check",chickHandler);//给按钮添加属性
+							
+						}
+						function chickHandler(){
+							if(allcheck == this){//如果点击按钮，实现全选
+								for(var i=0;i<4;i++)
+								{
+									var check = document.getElementById("check"+i);
+									check.checked = allcheck.checked;
+								}
+								return ;
+							}
+							for(var j=0;j<4;j++){
+								var checks = document.getElementById("check"+j);
+								if(!checks.checked){//判断是否选中全选按钮
+									allcheck.cheched = false;
+									return;
+								}
+							}
+							allcheck.cheched = true;
+						}
+
+			</script>
+			<hr width="100%" />
+		</div>
+		<br /><br/><br />
+		
+		<div id="container1">
+      <!--第三层-->
+			<div id="mid2">
+				<div class="container3" > 		
+				    <div id="menu" >
+					<form pid="1001">
+					<input type="checkbox" id="check0" value="选中"  />
+					</form>
+					 </div>
+					 <div id="a" >
+						 <img src="img/1.jpeg" class="im" width="50px";height="50px">
+						 </div>
+						<div id="content" >
+							<p>产品名称</p>
+							<span class="add"><button class="butt" onclick="">+</button></span>
+							 <strong>1</strong><span class="sub"><button class="butt" onclick="">-</button></span>
+						<span>¥:</span><em>200</em>
+							<br />
+							小计：<p class="xiao">200</p>
+							
+							
+							</div>
+						<div id="b" >
+						<button class="del1" onclick="deleteBtn(this)">删除</button>
+						<!-- <form autocomplete='off'>
+							 <input id="del1"  style="width: 50px; height: 30px; float: right;" onclick="deleteBtn(this)"  placeholder="删除">
+						 </form>
+						-->
+						
+						
+						</div>
+					<hr class="hrr"  />
+				</div>
+			<br />
+			<br />	
+			<!--重复-->
+				<div id="mid2">
+				<div class="container3" > 
+			
+				    <div id="menu" >
+				
+					<form pid="1001">
+					<input type="checkbox" id="check1" value="选中"  />
+					</form>
+					 </div>
+					 <div id="a" >
+						 <img src="img/1.jpeg" class="im" width="50px";hheight="50px">
+						 </div>
+						<div id="content" >
+							<p>产品名称</p>
+							<span class="add"><button class="butt" onclick="">+</button></span>
+							 <strong>1</strong><span class="sub"><button class="butt" onclick="">-</button></span>
+						<span>¥:</span><em>200</em>
+							<br />
+							小计：<p class="xiao">200</p>
+							
+							
+							</div>
+						<div id="b" >
+						<button class="del1" onclick="deleteBtn(this)">删除</button>
+						<!-- <form autocomplete='off'>
+							 <input id="del1"  style="width: 50px; height: 30px; float: right;" onclick="deleteBtn(this)"  placeholder="删除">
+						 </form>
+						-->
+						
+						
+						</div>
+					<hr class="hrr"  />
+				</div>
+			
+				<br />
+				<br />
+			<!--重复-->
+					<div id="mid2">
+				<div class="container3" > 
+			
+				    <div id="menu" >
+				
+					<form pid="1001">
+					<input type="checkbox" id="check2" value="选中"  />
+					</form>
+					 </div>
+					 <div id="a" >
+						 <img src="img/1.jpeg" class="im" width="50px";hheight="50px">
+						 </div>
+						<div id="content" >
+							<p>产品名称</p>
+							<span class="add"><button class="butt" onclick="">+</button></span>
+							 <strong>1</strong><span class="sub"><button class="butt" onclick="">-</button></span>
+						<span>¥:</span><em>200</em>
+							<br />
+							小计：<p class="xiao">200</p>
+							
+							
+							</div>
+						<div id="b" >
+						<button class="del1" onclick="deleteBtn(this)">删除</button>
+						<!-- <form autocomplete='off'>
+							 <input id="del1"  style="width: 50px; height: 30px; float: right;" onclick="deleteBtn(this)"  placeholder="删除">
+						 </form>
+						-->
+						</div>
+					<hr class="hrr" />
+				</div>
+	
+						<script type="text/javascript">
+							var deleteBtn = function(btn){	
+						     btn.parentElement.parentElement.remove();
+						     //将数组转化为字符串，存储到本地
+						    /*function (Odata,title,key){
+						    	 var arr=[];
+						    	 arr.push({"value":Odata,"title":title,"key":key});
+						    	 if (this.setstg.length !=null)
+						    	 {
+						    	 	if(this.setstg.length != 0){
+						    	 		this.setstg.concat(arr);
+						    	 	}else{
+						    	 		this.setstg = arr;
+						    	 	}
+						    	 }else{
+						    	 	this.setstg = arr;
+						    	 }
+						    var str = JSON.stringify(this.setstg);
+						    localStorage.setItem('local',str);
+						    this.setstg = JSON.parse(localStorage.getItem('local'));//将数组转化为字符串
+						    console.log('记录',this.setstg);
+						    
+						    }
+						    //从数组中删除一条记录，其余的保存到本地
+						    
+						    function(index){
+						    	 if(this.setstg.length != 0)
+						    	 {
+						    	 	this.setstg.splice(index,1);
+						    	 	console.log(this.setstg)
+						    	 	this.setstg = that.setstg;
+						    	 }
+						    	 localStorage.setItem('local',JSON.stringify(this.setstg));
+						    }
+						    
+						    */
+						    }
+						</script>
+				</div></div>
+				
+				<div id="all" >
+					<form>
+					
+				
+					<!--<input type="checkbox"  class="ck" name="allcheck" value="allcheck" style="float: left; ">-->
+						<p style="float: left;">全选</p><p >总价格：¥ <span id="totalPrice">0</span></p>
+						<button id="jiesuan" onclick="window.alert('请支付')">结算</button>
+					
+					</form>	
+				</div>
+				
+				
+			<!--固定界面-->		
+				</div>
+		<div class="nav"">
+				<ul>
+				    <li><a href="首页.html"><span>首页</span></a></li>
+				    <li><a href="购物车.html"><span>购物车</span></a></li>
+				    <li><a href="我的必要.html"><span>我的必要</span></a></li>
+				</ul>
+				</div>
+			</div>
+		
+   <script type="text/javascript" src="js/结算.js" ></script>
+			
+	</body>
+</html>
+

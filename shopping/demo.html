@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<ul id="list">
+			<li>
+		  	<input type="button" value="-" />
+		    <strong>0</strong>
+		  	<input type="button" value="+" />
+		    单价：<em>12.5元</em>
+		    小计：<span>0元</span>
+		    </li>
+		</ul>
+		 
+		<p>
+		商品合计共：<span>0</span>件，共花费了：<span>0</span>元<br />
+		所购商品中最贵的商品单价是：<span>0</span>元
+		</p>	
+		<script type="text/javascript">
+			//一个商品的+ -数量及小计功能
+			var aBtn=document.getElementsByTagName('input');//加减按钮
+			var oStr=document.getElementsByTagName("strong")[0];//数量
+			var oSpan=document.getElementsByTagName('span')[0];//小计
+			var oEm=document.getElementsByTagName('em')[0];//单价
+			var number=parseFloat(oStr.innerHTML);
+			var sumprice=0;//小计
+		    aBtn[0].onclick=function(){
+		    	if(number>0){number--;sumprice-=parseFloat(oEm.innerHTML);}
+		    	oStr.innerHTML=number;//数量
+		    	oSpan.innerHTML=parseFloat(oEm.innerHTML)*number+"元"
+		    }
+		    aBtn[1].onclick=function(){
+		        number++;
+		        oStr.innerHTML=number;
+		        oSpan.innerHTML=parseFloat(oEm.innerHTML)*number+"元"
+		    }
+		</script>
+	
+	</body>
+</html>

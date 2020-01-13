@@ -1,0 +1,37 @@
+ /*导航栏开始*/
+		       * {
+		           margin: 0;
+		           padding: 0;
+				 
+		       }
+		       
+		       li {
+		           list-style: none ;
+				   float: left;
+				   margin: 25px;
+				   width: 25%;
+				   
+		       }
+		       a {
+		           text-decoration: none;
+				   display: block;
+		       }
+			   a:visited{
+				   color: coral;
+			   }
+		       ul{
+				   background-color: #6495ED;
+			   } 
+		      .nav{
+				  position:fiexd;
+				  bottom:0;
+				  width: 100%; 
+				  position: absolute;
+				  background-color: #A9A9A9;
+			  }
+			  na{
+				  float: right;
+				  background-color: #A9A9A9;
+				   margin: 25px;
+			  }
+			
